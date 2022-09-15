@@ -13,8 +13,6 @@ jobs:
       # sets up .NET Core SDK 3.1
       - name: Setup .NET Core SDK
         uses: actions/setup-dotnet@v2.1.0
-        with:
-          dotnet-version: 3.1
       # publishes Blazor project to the release-folder
       - name: Publish .NET Core Project
         run: dotnet publish Pentaforce.Beta.Wiki/Pentaforce.Beta.Wiki.csproj -c Release -o release --nologo
