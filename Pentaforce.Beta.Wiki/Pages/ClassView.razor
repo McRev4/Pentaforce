@@ -1,0 +1,80 @@
+﻿@using Pentaforce.Beta.Wiki.ViewModels
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col">
+            @if (Archetype == ArchetypeType.Fighter)
+            {
+                <ul class="nav nav-pills justify-content-center">
+                    <li class="nav-item">
+                        <button class="nav-link @(Class == ClassType.Fighter ? "active" : string.Empty)" @onclick="OpenFighter">Воїн</button>
+                    </li>
+                    <li class="nav-item">
+                        <button class="nav-link @(Class == ClassType.Barbarian ? "active" : string.Empty)" @onclick="OpenBarbarian">Варвар</button>
+                    </li>
+                    <li class="nav-item">
+                        <button class="nav-link @(Class == ClassType.Hunter ? "active" : string.Empty)" @onclick="OpenHunter">Мисливець</button>
+                    </li>
+                </ul>
+            }
+            @if (Archetype == ArchetypeType.Spellblade)
+            {
+                <ul class="nav nav-pills justify-content-center">
+                    <li class="nav-item">
+                        <button class="nav-link @(Class == ClassType.Spellblade ? "active" : string.Empty)" @onclick="OpenSpellblade">Відьмак</button>
+                    </li>
+                    <li class="nav-item">
+                        <button class="nav-link @(Class == ClassType.Artificer ? "active" : string.Empty)" @onclick="OpenArtificer">Винахідник</button>
+                    </li>
+                </ul>
+            }
+        </div>
+    </div>
+    @if (Class == ClassType.Fighter)
+    {
+        <FighterView></FighterView>
+    }
+    @if (Class == ClassType.Barbarian)
+    {
+        <BarbarianView></BarbarianView>
+    }
+    @if (Class == ClassType.Hunter)
+    {
+        <HunterView></HunterView>
+    }
+    @if (Class == ClassType.Spellblade)
+    {
+        <SpellbladeView></SpellbladeView>
+    }
+    @if (Class == ClassType.Artificer)
+    {
+        <ArtificerView></ArtificerView>
+    }
+</div>
+
+@code {
+    private ArchetypeType archetype = ArchetypeType.Fighter;
+    [Parameter]
+    public ArchetypeType Archetype
+    {
+        get => archetype;
+        set
+        {
+            archetype = value;
+            var action = archetype switch
+            {
+                ArchetypeType.Fighter => Class = ClassType.Fighter,
+                ArchetypeType.Spellblade => Class = ClassType.Spellblade
+            };
+        }
+    }
+
+    private ClassType Class { get; set; } = ClassType.Fighter;
+
+    private void OpenFighter() => Class = ClassType.Fighter;
+    private void OpenBarbarian() => Class = ClassType.Barbarian;
+    private void OpenHunter() => Class = ClassType.Hunter;
+
+    private void OpenSpellblade() => Class = ClassType.Spellblade;
+    private void OpenArtificer() => Class = ClassType.Artificer;
+}
