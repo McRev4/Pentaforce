@@ -1,0 +1,57 @@
+﻿@using Pentaforce.Beta.Wiki.ViewModels
+
+@page "/abilities"
+
+<div class="container">
+    <div class="row mt-3">
+        <div class="col">
+            <ul class="nav nav-tabs">
+                <li class="nav-item">
+                    <button type="button" class="nav-link @(Type == AbilityType.BasicMelee ? "active" : string.Empty)" @onclick="() => OpenType(AbilityType.BasicMelee)">Базові Вміння Ближнього Бою</button>
+                </li>
+                <li class="nav-item">
+                    <button type="button" class="nav-link @(Type == AbilityType.AdvMelee ? "active" : string.Empty)" @onclick="() => OpenType(AbilityType.AdvMelee)">Просунуті Вміння Ближнього Бою</button>
+                </li>
+                <li class="nav-item">
+                    <button type="button" class="nav-link @(Type == AbilityType.BasicRanged ? "active" : string.Empty)" @onclick="() => OpenType(AbilityType.BasicRanged)">Базові Вміння Дальнього Бою</button>
+                </li>
+                <li class="nav-item">
+                    <button type="button" class="nav-link @(Type == AbilityType.AdvRanged ? "active" : string.Empty)" @onclick="() => OpenType(AbilityType.AdvRanged)">Просунуті Вміння Дального Бою</button>
+                </li>
+                <li class="nav-item">
+                    <button type="button" class="nav-link @(Type == AbilityType.BasicInvention ? "active" : string.Empty)" @onclick="() => OpenType(AbilityType.BasicInvention)">Базові Винаходи</button>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            @if (Type == AbilityType.BasicMelee)
+            {
+                <BasicMeleeView></BasicMeleeView>
+            }
+            @if (Type == AbilityType.AdvMelee)
+            {
+                <AdvMeleeView></AdvMeleeView>
+            }
+            @if (Type == AbilityType.BasicRanged)
+            {
+                <BasicRangedView></BasicRangedView>
+            }
+            @if (Type == AbilityType.AdvRanged)
+            {
+                <AdvRangedView></AdvRangedView>
+            }
+            @if (Type == AbilityType.BasicInvention)
+            {
+                <BasicInvention></BasicInvention>
+            }
+        </div>
+    </div>
+</div>
+
+@code {
+    private AbilityType Type { get; set; }
+
+    private void OpenType(AbilityType type) => Type = type;
+}
