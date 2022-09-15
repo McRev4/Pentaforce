@@ -16,6 +16,9 @@ jobs:
       # publishes Blazor project to the release-folder
       - name: Publish .NET Core Project
         run: dotnet publish Pentaforce.Beta.Wiki/Pentaforce.Beta.Wiki.csproj -c Release -o release --nologo
+      # changes the base-tag in index.html from '/' to 'BlazorGitHubPagesDemo' to match GitHub Pages repository subdirectory
+      - name: Change base-tag in index.html from / to Pentaforce
+        run: sed -i 's/<base href="\/" \/>/<base href="\/pentaforce\/" \/>/g' release/wwwroot/index.html
       - name: Deploy to GitHub Pages
         # You may pin to the exact commit or the version.
         # uses: JamesIves/github-pages-deploy-action@13046b614c663b56cba4dda3f30b9736a748b80d
