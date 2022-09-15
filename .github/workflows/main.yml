@@ -1,0 +1,28 @@
+name: Deploy to GitHub Pages
+# Run workflow on every push to the master branch
+on:
+  push:
+    branches: [ master ]
+jobs:
+  deploy-to-github-pages:
+    # use ubuntu-latest image to run steps on
+    runs-on: ubuntu-latest
+    steps:
+       # uses GitHub's checkout action to checkout code form the master branch
+      - uses: actions/checkout@v2
+      # sets up .NET Core SDK 3.1
+      - name: Setup .NET Core SDK
+        uses: actions/setup-dotnet@v2.1.0
+        with:
+          dotnet-version: 3.1
+      # publishes Blazor project to the release-folder
+      - name: Publish .NET Core Project
+        run: dotnet publish Pentaforce.Beta.Wiki.csproj -c Release -o release --nologo
+      - name: Deploy to GitHub Pages
+        # You may pin to the exact commit or the version.
+        # uses: JamesIves/github-pages-deploy-action@13046b614c663b56cba4dda3f30b9736a748b80d
+        uses: JamesIves/github-pages-deploy-action@v4.4.0
+        with:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          BRANCH: master
+          FOLDER: release/wwwroot
