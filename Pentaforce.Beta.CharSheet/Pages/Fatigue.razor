@@ -1,0 +1,121 @@
+﻿<div class="container-fluid cs-border fs-10px p-0 m-0">
+    <div class="row p-0 m-0">
+        <div class="col p-0 m-0">
+            <table class="table table-sm mb-1">
+                <thead>
+                    <tr>
+                        <td class="text-center" scope="col" width="20%">Втома</td>
+                        <td scope="col">Виснаження</td>
+                        @if (Rage)
+                        {
+                            <td scope="col" width="20%">Куб Люті</td>
+                        }
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="text-center" scope="row">
+                            <input type="checkbox" class="form-check-input" value="" />
+                            <input type="checkbox" class="form-check-input" value="" />
+                            <input type="checkbox" class="form-check-input" value="" />
+                        </td>
+                        <td>Ви не можете зцілювати Шрами</td>
+                        @if (Rage)
+                        {
+                            <td>1д4</td>
+                        }
+                    </tr>
+                    <tr>
+                        <td class="text-center" scope="row">
+                            <input type="checkbox" class="form-check-input" value="" />
+                            <input type="checkbox" class="form-check-input" value="" />
+                            <input type="checkbox" class="form-check-input" value="" />
+                        </td>
+                        <td>Ви маєте Заваду на кидках Ініціативи</td>
+                        @if (Rage)
+                        {
+                            <td>1д6</td>
+                        }
+                    </tr>
+                    <tr>
+                        <td class="text-center" scope="row">
+                            <input type="checkbox" class="form-check-input" value="" />
+                            <input type="checkbox" class="form-check-input" value="" />
+                            <input type="checkbox" class="form-check-input" value="" />
+                        </td>
+                        <td>Ваш Куб Здоров'я зменшений вдвічі</td>
+                        @if (Rage)
+                        {
+                            <td>1д8</td>
+                        }
+                    </tr>
+                    <tr>
+                        <td class="text-center" scope="row">
+                            <input type="checkbox" class="form-check-input" value="" />
+                            <input type="checkbox" class="form-check-input" value="" />
+                            <input type="checkbox" class="form-check-input" value="" />
+                        </td>
+                        <td>Ви не можете зцілювати Поранення</td>
+                        @if (Rage)
+                        {
+                            <td>1д10</td>
+                        }
+                    </tr>
+                    <tr>
+                        <td class="text-center" scope="row">
+                            <input type="checkbox" class="form-check-input" value="" />
+                            <input type="checkbox" class="form-check-input" value="" />
+                            <input type="checkbox" class="form-check-input" value="" />
+                        </td>
+                        <td>Ви маєте Заваду на кидках Опору</td>
+                        @if (Rage)
+                        {
+                            <td>1д12</td>
+                        }
+                    </tr>
+                    <tr>
+                        <td class="text-center" scope="row">
+                            <input type="checkbox" class="form-check-input" value="" />
+                            <input type="checkbox" class="form-check-input" value="" />
+                            <input type="checkbox" class="form-check-input" value="" />
+                        </td>
+                        <td>Ви маєте Заваду на кидках Навичок</td>
+                        @if (Rage)
+                        {
+                            <td>1д4+1д8</td>
+                        }
+                    </tr>
+                    <tr>
+                        <td class="text-center" scope="row">
+                            <input type="checkbox" class="form-check-input" value="" />
+                            <input type="checkbox" class="form-check-input" value="" />
+                            <input type="checkbox" class="form-check-input" value="" />
+                        </td>
+                        <td>Ви маєте Заваду на кидках Атаки</td>
+                        @if (Rage)
+                        {
+                            <td>1д6+1д8</td>
+                        }
+                    </tr>
+                    <tr>
+                        <td class="text-center" scope="row">
+                            <input type="checkbox" class="form-check-input" value="" />
+                            <input type="checkbox" class="form-check-input" value="" />
+                            <input type="checkbox" class="form-check-input" value="" />
+                        </td>
+                        <td>Ви маєте Заваду на кидках Захисту</td>
+                        @if (Rage)
+                        {
+                            <td>1д6+1д10</td>
+                        }
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+@code {
+    [Parameter]
+    public bool Rage { get; set; }
+}

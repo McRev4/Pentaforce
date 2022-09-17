@@ -1,0 +1,116 @@
+﻿<div class="container-fluid cs-border fs-10px">
+    <div class="row">
+        <div class="col">
+            <table class="table table-sm caption-top mb-1">
+                <caption>Навички Виживання</caption>
+                <tbody>
+                    <tr>
+                        <td>Дослідження (Роз)</td>
+                        <td>+@Math.Round(Intellect/2)</td>
+                    </tr>
+                    <tr>
+                        <td>Непомітність (Пру)</td>
+                        <td>+@Math.Round(Agility/2)</td>
+                    </tr>
+                    <tr>
+                        <td>Тваринництво (Ріш)</td>
+                        <td>+@Math.Round(Resolve/2)</td>
+                    </tr>
+                    <tr>
+                        <td>Уважність (Спр)</td>
+                        <td>+@Math.Round(Perception/2)</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="col">
+            <table class="table table-sm caption-top mb-1">
+                <caption>Навички Знань</caption>
+                <tbody>
+                    <tr>
+                        <td>Лор (Роз)</td>
+                        <td>+@Math.Round(Intellect/2)</td>
+                    </tr>
+                    <tr>
+                        <td>Містика (Роз)</td>
+                        <td>+@Math.Round(Intellect/2)</td>
+                    </tr>
+                    <tr>
+                        <td>Науки (Роз)</td>
+                        <td>+@Math.Round(Intellect/2)</td>
+                    </tr>
+                    <tr>
+                        <td>Окультизм (Спр)</td>
+                        <td>+@Math.Round(Perception/2)</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="col">
+            <table class="table table-sm caption-top mb-1">
+                <caption>Навички Соціалізації</caption>
+                <tbody>
+                    <tr>
+                        <td>Авторитет (Ріш+Шрами)</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Воля (Ріш)</td>
+                        <td>+@Math.Round(Resolve/2)</td>
+                    </tr>
+                    <tr>
+                        <td>Прозорливість (Спр)</td>
+                        <td>+@Math.Round(Perception/2)</td>
+                    </tr>
+                    <tr>
+                        <td>Харизма (Ріш-Шрами)</td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="col">
+            <table class="table table-sm caption-top mb-1">
+                <caption>Навички Тіла</caption>
+                <tbody>
+                    <tr>
+                        <td>Витривалість (Міц)</td>
+                        <td>+@Math.Round(Might/2)</td>
+                    </tr>
+                    <tr>
+                        <td>Моторність (Пру)</td>
+                        <td>+@Math.Round(Agility/2)</td>
+                    </tr>
+                    <tr>
+                        <td>Сила (Міц)</td>
+                        <td>+@Math.Round(Might/2)</td>
+                    </tr>
+                    <tr>
+                        <td>Спритність (Пру)</td>
+                        <td>+@Math.Round(Agility/2)</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+@code {
+    [Parameter]
+    public double Might { get; set; }
+
+    [Parameter]
+    public double Agility { get; set; }
+
+    [Parameter]
+    public double Perception { get; set; }
+
+    [Parameter]
+    public double Intellect { get; set; }
+
+    [Parameter]
+    public double Resolve { get; set; }
+
+    [Parameter]
+    public double Luck { get; set; }
+}

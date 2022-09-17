@@ -1,0 +1,51 @@
+﻿<div class="container-fluid fs-12px">
+    <div class="row">
+        <div class="col cs-border p-0">
+            <div class="form-floating">
+                <input type="text" class="form-control text-center fs-5" id="speed" value="@Speed" />
+                <label for="speed">Швидкість</label>
+            </div>
+        </div>
+        <div class="col cs-border p-0">
+            <div class="form-floating">
+                <input type="text" class="form-control text-center fs-5" id="reaction" value="@Reaction" />
+                <label for="reaction">Реакції</label>
+            </div>
+        </div>
+        <div class="col cs-border p-0">
+            <div class="form-floating">
+                <input type="text" class="form-control text-center fs-5" id="tierDice" value="1д4" />
+                <label for="tierDice">Куб Рангу</label>
+            </div>
+        </div>
+        <div class="col cs-border p-0">
+            <div class="form-floating">
+                <input type="text" class="form-control" id="luckCharges" />
+                <label for="luckCharges">Заряди Вдачі</label>
+            </div>
+        </div>
+        <div class="col cs-border p-0">
+            <div class="form-floating">
+                <input type="text" class="form-control text-center fs-5" id="initiative" value="@Initiative" />
+                <label for="initiative">Ініціатива</label>
+            </div>
+        </div>
+        <div class="col cs-border p-0">
+            <div class="form-floating">
+                <input type="text" class="form-control" id="scars" />
+                <label for="scars">Шрами</label>
+            </div>
+        </div>
+    </div>
+</div>
+
+@code {
+    [Parameter]
+    public string Speed { get; set; }
+
+    [Parameter]
+    public string Reaction { get; set; }
+
+    [Parameter]
+    public string Initiative { get; set; }
+}
