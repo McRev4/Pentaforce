@@ -1,0 +1,39 @@
+﻿@page "/noiz"
+
+<div>
+    <CharInfo Name="Нойз" Level="2" Archetype="Воїн" Class="Мисливець" Ancestry="Азмодей" Heritage="?"></CharInfo>
+    <Attributes Might="4" Agility="9" Perception="8" Intellect="4" Resolve="4" Luck="5"></Attributes>
+    <Skills Might="4" Agility="9" Perception="8" Intellect="4" Resolve="4" Luck="5"></Skills>
+    <Misc Speed="6" Reaction="2" Initiative="1д10"></Misc>
+    <HP BattleDice="1д10+1д20"></HP>
+    <Defences></Defences>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-5 p-0 m-0">
+                <Fatigue></Fatigue>
+            </div>
+            <div class="col p-0 m-0 cs-border">
+                <Feature Caption="Несамовита Лють">Ваші атаки підсилені Кубом Люті, розмір якого залежить від рівня вашого Виснаження. Також в бою ви ігноруєте негативні ефекти останнього рівня Виснаження.</Feature>
+                <Feature Caption="Шаленство">Отримуючи одну Втому, ви можете використовувати Куб Люті двічі за Атаку.</Feature>
+                <Feature Caption="Агресивний Натиск">Отримуючи одну Втому, ви можете збільшити свою Швидкість на значення рівня вашого Виснаження до кінця вашого ходу.</Feature>
+                <Feature Caption="Швидке Відновлення" NoBorder="true">Під час Відпочинку ви можете використати Куб Здоров’я щоб зняти відповідну кількість Втоми.</Feature>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-5 cs-border p-0 m-0">
+                <Feature Caption="Бойова Роль" NoBorder="true"></Feature>
+            </div>
+            <div class="col cs-border p-0 m-0">
+                <Feature Caption="Прилив Адреналіну">Ваші Навички Тіла збільшені на один. На початку кожного наступного Рангу вони збільшуються ще на один.</Feature>
+                <Feature Caption="Сакралітет" NoBorder="true">Ваша Навичка Містики збільшена на п’ять.</Feature>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid" style="page-break-before: always!important;">
+        <div class="row">
+            <div class="col-4 cs-border pt-2" style="height: 276px;">
+                <Card Caption="Зціпивши Зуби" Reaction="true">Коли ви отримуєте Шкоду, в якості Реакції ви можете зменшити її на Куб Люті.</Card>
+            </div>
+        </div>
+    </div>
+</div>

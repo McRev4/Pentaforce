@@ -1,0 +1,14 @@
+﻿<div class="@(NoBorder ? string.Empty : "cs-border only-bottom") p-1">
+    <p class="m-0 fs-12px"><b>@Caption</b>: @ChildContent</p>
+</div>
+
+@code {
+    [Parameter]
+    public string Caption { get; set; }
+
+    [Parameter]
+    public RenderFragment ChildContent { get; set; }
+
+    [Parameter]
+    public bool NoBorder { get; set; }
+}

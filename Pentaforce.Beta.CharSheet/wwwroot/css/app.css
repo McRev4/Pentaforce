@@ -24,9 +24,17 @@ div.charinfo, div.attribute, div.skills, div.resistance {
 }*/
 
 div.cs-border {
-    border-style: double!important;
-    border-width: thick!important;
+    border-style: double !important;
+    border-width: thick !important;
 }
+
+    div.cs-border.only-bottom {
+        border-bottom-style: groove !important;
+        border-bottom-width: thick !important;
+        border-left: none !important;
+        border-top: none !important;
+        border-right: none !important;
+    }
 
 .fs-10px {
     font-size: 10px;
