@@ -1,0 +1,49 @@
+﻿<div class="container-fluid p-0">
+    <div class="row m-0">
+        <div class="col-8">
+            <h6 class="m-0">@Caption</h6>
+            <p class="m-0 fs-12px"><b>@GetName()</b></p>
+        </div>
+        <div class="col">
+            <img src="@GetImage()" class="img-fluid" />
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <p class="fs-12px">@ChildContent</p>
+        </div>
+    </div>
+</div>
+
+@code {
+    [Parameter]
+    public bool Action { get; set; }
+
+    [Parameter]
+    public bool Maneuver { get; set; }
+
+    [Parameter]
+    public bool Reaction { get; set; }
+
+    [Parameter]
+    public string Caption { get; set; }
+
+    [Parameter]
+    public RenderFragment ChildContent { get; set; }
+
+    private string GetImage()
+    {
+        if (Action) return "images/fist.png";
+        if (Maneuver) return "images/tread.png";
+        if (Reaction) return "images/doubled.png";
+        return string.Empty;
+    }
+
+    private string GetName()
+    {
+        if (Action) return "Дія";
+        if (Maneuver) return "Маневр";
+        if (Reaction) return "Реакція";
+        return string.Empty;
+    }
+}
