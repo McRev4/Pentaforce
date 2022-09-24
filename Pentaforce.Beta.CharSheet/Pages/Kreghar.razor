@@ -1,0 +1,54 @@
+﻿@page "/barb"
+@page "/kreghar"
+
+<div>
+    <CharInfo Name="Крегхар" Level="2" Archetype="Воїн" Class="Варвар" Ancestry="Драконіанин" Heritage="Драконовірець"></CharInfo>
+    <Attributes Might="10" Agility="9" Perception="4" Intellect="8" Resolve="3" Luck="5"></Attributes>
+    <Skills Might="10" Agility="9" Perception="4" Intellect="8" Resolve="3" Luck="5" Mysticism="5" Physical="1"></Skills>
+    <Misc Speed="6" Reaction="2" Luck="5" Initiative="1д4"></Misc>
+    <HP BattleDice="39"></HP>
+    <Defences></Defences>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-5 p-0 m-0">
+                <Fatigue Rage="true"></Fatigue>
+            </div>
+            <div class="col p-0 m-0 cs-border">
+                <Feature Caption="Несамовита Лють">Ваші атаки підсилені Кубом Люті, розмір якого залежить від вашого Виснаження. Також в бою ви ігноруєте останній негативний ефект Виснаження.</Feature>
+                <Feature Caption="Шаленство">Отримуючи одну Втому, ви можете використовувати Куб Люті двічі за Атаку.</Feature>
+                <Feature Caption="Агресивний Натиск">Отримуючи одну Втому, ви можете збільшити свою Швидкість на значення вашого Виснаження на один хід.</Feature>
+                <Feature Caption="Швидке Відновлення" NoBorder="true">Під час Відпочинку ви не знімаєте Виснаження як зазвичай. Натомість ви Куб Здоров'я Втоми.</Feature>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-5 cs-border">
+            </div>
+            <div class="col cs-border">
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid" style="page-break-before: always!important;">
+        <div class="row">
+            <div class="col-4 cs-border pt-2" style="height: 276px;">
+                <Card Caption="Зціпивши Зуби" Reaction="true">
+                    <div class="row">
+                        <div class="col-3">
+                            <label class="fst-italic">Умова:</label>
+                        </div>
+                        <div class="col">
+                            <label>Ви отримуєте Шкоду</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-3">
+                            <label class="fst-italic">Ефект:</label>
+                        </div>
+                        <div class="col">
+                            <label>Ви можете зменшити її на Куб Люті.</label>
+                        </div>
+                    </div>
+                </Card>
+            </div>
+        </div>
+    </div>
+</div>

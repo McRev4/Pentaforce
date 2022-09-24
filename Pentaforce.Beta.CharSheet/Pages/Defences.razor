@@ -1,0 +1,100 @@
+﻿<div class="container-fluid fs-12px">
+    <div class="row">
+        <div class="col cs-border p-0">
+            <label class="feature-label">Стійкість Дроблячій Шкоді</label>
+            <label class="text-end">@Bludgeoning</label>
+        </div>
+        <div class="col cs-border p-0">
+            <label class="feature-label">Стійкість Протикаючій Шкоді</label>
+            <label class="text-end">@Piercing</label>
+        </div>
+        <div class="col cs-border p-0">
+            <label class="feature-label">Стійкість Ріжучій Шкоді</label>
+            <label class="text-end">@Slashing</label>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col cs-border p-0">
+            <label class="feature-label">Стійкість Вогняню</label>
+            <label class="text-end">@Fire</label>
+        </div>
+        <div class="col cs-border p-0">
+            <label class="feature-label">Стійкість Електриці</label>
+            <label class="text-end">@Electric</label>
+        </div>
+        <div class="col cs-border p-0">
+            <label class="feature-label">Стійкість Звуку Шкоді</label>
+            <label class="text-end">@Sound</label>
+        </div>
+        <div class="col cs-border p-0">
+            <label class="feature-label">Стійкість Їдкій Шкоді</label>
+            <label class="text-end">@Corosion</label>
+        </div>
+        <div class="col cs-border p-0">
+            <label class="feature-label">Стійкість Холоду</label>
+            <label class="text-end">@Cold</label>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col cs-border p-0">
+            <div style="display: inline-flex;">
+                <p class="feature-label m-0">Стійкість Духовній Шкоді</p>
+            </div>
+            <div class="text-end" style="display: inline-flex;">
+                <p class="m-0 text-end">@Spirit</p>
+            </div>
+        </div>
+        <div class="col cs-border p-0">
+            <label class="feature-label">Стійкість Ментальній Шкоді</label>
+            <label class="text-end">@Mental</label>
+        </div>
+        <div class="col cs-border p-0">
+            <label class="feature-label">Стійкість Некротичній Шкоді</label>
+            <label class="text-end">@Necrotic</label>
+        </div>
+        <div class="col cs-border p-0">
+            <label class="feature-label">Стійкість Сяючій Шкоді</label>
+            <label class="text-end">@Light</label>
+        </div>
+    </div>
+</div>
+
+@code {
+    [Parameter]
+    public string Bludgeoning { get; set; }
+
+    [Parameter]
+    public string Piercing { get; set; }
+
+    [Parameter]
+    public string Slashing { get; set; }
+
+
+    [Parameter]
+    public string Fire { get; set; }
+
+    [Parameter]
+    public string Electric { get; set; }
+
+    [Parameter]
+    public string Sound { get; set; }
+
+    [Parameter]
+    public string Corosion { get; set; }
+
+    [Parameter]
+    public string Cold { get; set; }
+
+
+    [Parameter]
+    public string Spirit { get; set; }
+
+    [Parameter]
+    public string Mental { get; set; }
+
+    [Parameter]
+    public string Necrotic { get; set; }
+
+    [Parameter]
+    public string Light { get; set; }
+}
