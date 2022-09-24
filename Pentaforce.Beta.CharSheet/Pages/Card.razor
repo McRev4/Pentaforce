@@ -1,8 +1,24 @@
 ﻿<div class="container-fluid p-0">
-    <div class="row">
+    <div class="row mb-2">
         <div class="col-8">
             <h5 class="m-0">@Caption</h5>
-            <p class="m-0 fs-12px"><b>@GetName()</b></p>
+            <div class="row">
+                @if (OneTime)
+                {
+                    <div class="col-1">
+                        <i class="bi bi-fire"></i>
+                    </div>
+                }
+                @if (Fatigue)
+                {
+                    <div class="col-1">
+                        <i class="bi bi-record-circle-fill"></i>
+                    </div>
+                }
+                <div class="col align-middle">
+                    <p class="m-0 fs-12px" style="display: inline;"><b>@GetName()</b></p>
+                </div>
+            </div>
         </div>
         <div class="col">
             <img src="@GetImage()" class="img-fluid" />
@@ -10,7 +26,7 @@
     </div>
     <div class="row">
         <div class="col">
-            <p class="m-0">@ChildContent</p>
+            <p class="m-0" style="font-size: @(FontSize)px;">@ChildContent</p>
         </div>
     </div>
 </div>
@@ -30,6 +46,15 @@
 
     [Parameter]
     public RenderFragment ChildContent { get; set; }
+
+    [Parameter]
+    public int FontSize { get; set; } = 16;
+
+    [Parameter]
+    public bool OneTime { get; set; }
+
+    [Parameter]
+    public bool Fatigue { get; set; }
 
     private string GetImage()
     {

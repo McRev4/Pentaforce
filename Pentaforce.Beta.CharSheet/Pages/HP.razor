@@ -2,13 +2,13 @@
     <div class="row">
         <div class="col-2 cs-border p-0">
             <div class="form-floating">
-                <input type="text" class="form-control text-center fs-5" id="hpmax" value="80" />
+                <input type="text" class="form-control text-center fs-5" id="hpmax" value="@Health" />
                 <label for="hpmax">Макс. Здоров'я</label>
             </div>
         </div>
         <div class="col-2 cs-border p-0">
             <div class="form-floating">
-                <input type="text" class="form-control text-center fs-5" id="wound" value="40" />
+                <input type="text" class="form-control text-center fs-5" id="wound" value="@(Health / 2)" />
                 <label for="wound">Поранення</label>
             </div>
         </div>
@@ -19,17 +19,24 @@
             </div>
         </div>
         <div class="col cs-border p-0">
-            <div class="form-floating">
-                <input type="text" class="form-control" id="surges" />
-                <label for="surges">Заряди Здоров'я</label>
+            <label class="feature-label">Заряди Здоров'я</label>
+            <br class="m-0" />
+            <div class="ms-3">
+                @foreach (var item in Enumerable.Range(0, HealCount))
+                {
+                    <input type="checkbox" class="ms-1 me-1" />
+                }
             </div>
         </div>
-        <div class="col-2 cs-border p-0">
-            <div class="form-floating">
-                <input type="text" class="form-control" id="woundCount" />
-                <label for="woundCount">Поранення</label>
+        @if (!NoWounds)
+        {
+            <div class="col-2 cs-border p-0">
+                <div class="form-floating">
+                    <input type="text" class="form-control" id="woundCount" />
+                    <label for="woundCount">Поранення</label>
+                </div>
             </div>
-        </div>
+        }
     </div>
     <div class="row">
         <div class="col cs-border p-0">
@@ -40,7 +47,7 @@
         </div>
         <div class="col-3 cs-border p-0">
             <div class="form-floating">
-                <textarea class="form-control text-center fs-4" id="battleDice" style="height: 80px;">@BattleDice</textarea>
+                <textarea class="form-control text-center fs-5" id="battleDice" style="height: 80px;">@BattleDice</textarea>
                 <label for="battleDice">Бойові Куби</label>
             </div>
         </div>
@@ -55,5 +62,14 @@
 
 @code {
     [Parameter]
+    public int Health { get; set; } = 80;
+
+    [Parameter]
     public string BattleDice { get; set; }
+
+    [Parameter]
+    public int HealCount { get; set; } = 10;
+
+    [Parameter]
+    public bool NoWounds { get; set; }
 }

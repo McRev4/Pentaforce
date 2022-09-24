@@ -6,19 +6,19 @@
                 <tbody>
                     <tr>
                         <td>Дослідження (Роз)</td>
-                        <td>+@Math.Round(Intellect/2)</td>
+                        <td>+@(Math.Round(Intellect / 2) + Investigation + Survival)</td>
                     </tr>
                     <tr>
                         <td>Непомітність (Пру)</td>
-                        <td>+@Math.Round(Agility/2)</td>
+                        <td>+@(Math.Round(Agility / 2) + Stealth + Survival)</td>
                     </tr>
                     <tr>
                         <td>Тваринництво (Ріш)</td>
-                        <td>+@Math.Round(Resolve/2)</td>
+                        <td>+@(Math.Round(Resolve / 2) + AnimalHandling + Survival)</td>
                     </tr>
                     <tr>
                         <td>Уважність (Спр)</td>
-                        <td>+@Math.Round(Perception/2)</td>
+                        <td>+@(Math.Round(Perception / 2) + Awareness + Survival)</td>
                     </tr>
                 </tbody>
             </table>
@@ -29,19 +29,19 @@
                 <tbody>
                     <tr>
                         <td>Лор (Роз)</td>
-                        <td>+@Math.Round(Intellect/2)</td>
+                        <td>+@(Math.Round(Intellect / 2) + Lore + Knowledge)</td>
                     </tr>
                     <tr>
                         <td>Містика (Роз)</td>
-                        <td>+@Math.Round(Intellect/2)</td>
+                        <td>+@(Math.Round(Intellect / 2) + Mysticism + Knowledge)</td>
                     </tr>
                     <tr>
                         <td>Науки (Роз)</td>
-                        <td>+@Math.Round(Intellect/2)</td>
+                        <td>+@(Math.Round(Intellect / 2) + Science + Knowledge)</td>
                     </tr>
                     <tr>
                         <td>Окультизм (Спр)</td>
-                        <td>+@Math.Round(Perception/2)</td>
+                        <td>+@(Math.Round(Perception / 2) + Occultism + Knowledge)</td>
                     </tr>
                 </tbody>
             </table>
@@ -52,19 +52,19 @@
                 <tbody>
                     <tr>
                         <td>Авторитет (Ріш+Шрами)</td>
-                        <td></td>
+                        <td>+@(Math.Round(Resolve / 2) + Authority + Social)</td>
                     </tr>
                     <tr>
                         <td>Воля (Ріш)</td>
-                        <td>+@Math.Round(Resolve/2)</td>
+                        <td>+@(Math.Round(Resolve / 2) + Willpower + Social)</td>
                     </tr>
                     <tr>
                         <td>Прозорливість (Спр)</td>
-                        <td>+@Math.Round(Perception/2)</td>
+                        <td>+@(Math.Round(Perception / 2) + Insight + Social)</td>
                     </tr>
                     <tr>
                         <td>Харизма (Ріш-Шрами)</td>
-                        <td></td>
+                        <td>+@(Math.Round(Resolve / 2) + Charisma + Social)</td>
                     </tr>
                 </tbody>
             </table>
@@ -75,19 +75,19 @@
                 <tbody>
                     <tr>
                         <td>Витривалість (Міц)</td>
-                        <td>+@Math.Round(Might/2)</td>
+                        <td>+@(Math.Round(Might / 2) + Endurance + Physical)</td>
                     </tr>
                     <tr>
                         <td>Моторність (Пру)</td>
-                        <td>+@Math.Round(Agility/2)</td>
+                        <td>+@(Math.Round(Agility / 2) + Dexterity + Physical)</td>
                     </tr>
                     <tr>
                         <td>Сила (Міц)</td>
-                        <td>+@Math.Round(Might/2)</td>
+                        <td>+@(Math.Round(Might / 2) + Strength + Physical)</td>
                     </tr>
                     <tr>
                         <td>Спритність (Пру)</td>
-                        <td>+@Math.Round(Agility/2)</td>
+                        <td>+@(Math.Round(Agility / 2) + Swiftness + Physical)</td>
                     </tr>
                 </tbody>
             </table>
@@ -113,4 +113,68 @@
 
     [Parameter]
     public double Luck { get; set; }
+
+
+    [Parameter]
+    public double Investigation { get; set; }
+
+    [Parameter]
+    public double Stealth { get; set; }
+
+    [Parameter]
+    public double AnimalHandling { get; set; }
+
+    [Parameter]
+    public double Awareness { get; set; }
+
+
+    [Parameter]
+    public double Lore { get; set; }
+
+    [Parameter]
+    public double Mysticism { get; set; }
+
+    [Parameter]
+    public double Science { get; set; }
+
+    [Parameter]
+    public double Occultism { get; set; }
+
+
+    [Parameter]
+    public double Authority { get; set; }
+
+    [Parameter]
+    public double Willpower { get; set; }
+
+    [Parameter]
+    public double Insight { get; set; }
+
+    [Parameter]
+    public double Charisma { get; set; }
+
+
+    [Parameter]
+    public double Endurance { get; set; }
+
+    [Parameter]
+    public double Dexterity { get; set; }
+
+    [Parameter]
+    public double Strength { get; set; }
+
+    [Parameter]
+    public double Swiftness { get; set; }
+
+    [Parameter]
+    public double Physical { get; set; }
+
+    [Parameter]
+    public double Social { get; set; }
+
+    [Parameter]
+    public double Survival { get; set; }
+
+    [Parameter]
+    public double Knowledge { get; set; }
 }

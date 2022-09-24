@@ -2,36 +2,43 @@
 
 <div>
     <CharInfo Name="Катаракта" Level="2" Archetype="Відьмак" Class="Винахідник" Ancestry="Імерит" Heritage="Вогняний"></CharInfo>
-    <Attributes Might="7" Agility="3" Perception="6" Intellect="10" Resolve="9" Luck="3"></Attributes>
-    <Skills Might="7" Agility="3" Perception="6" Intellect="10" Resolve="9" Luck="3"></Skills>
-    <Misc Speed="6" Reaction="1" Initiative="1д8"></Misc>
-    <HP BattleDice="1д8+1д10+1д12"></HP>
-    <Defences></Defences>
+    <Attributes Might="9" Agility="4" Perception="4" Intellect="10" Resolve="9" Luck="2"></Attributes>
+    <Skills Might="9" Agility="4" Perception="4" Intellect="10" Resolve="9" Luck="2" Authority="5" Investigation="4" Dexterity="1" Science="1" Occultism="1" Awareness="3"></Skills>
+    <Misc Luck="2" Speed="6" Reaction="1" Initiative="1д8"></Misc>
+    <HP BattleDice="38"></HP>
+    <Defences Fire="4"></Defences>
     <div class="container-fluid">
         <div class="row">
             <div class="col-5 p-0 m-0">
                 <Fatigue></Fatigue>
             </div>
             <div class="col p-0 m-0 cs-border">
-                <Feature Caption="Несамовита Лють">Ваші атаки підсилені Кубом Люті, розмір якого залежить від рівня вашого Виснаження. Також в бою ви ігноруєте негативні ефекти останнього рівня Виснаження.</Feature>
-                <Feature Caption="Шаленство">Отримуючи одну Втому, ви можете використовувати Куб Люті двічі за Атаку.</Feature>
-                <Feature Caption="Агресивний Натиск">Отримуючи одну Втому, ви можете збільшити свою Швидкість на значення рівня вашого Виснаження до кінця вашого ходу.</Feature>
-                <Feature Caption="Швидке Відновлення" NoBorder="true">Під час Відпочинку ви можете використати Куб Здоров’я щоб зняти відповідну кількість Втоми.</Feature>
+                <Feature Caption="Палаюча Лють">Коли ви проводите Базову Атаку, ви можете змінити тип її Шкоди на Вогняну. Також вам не потрібна зброя щоб проводити Базову Вогняну Дальню Атаку.</Feature>
+                <Feature Caption="Винаходи">У вашій наявні є три заряди винахідництва. Витративши один заряд та трохи часу, ви можете створити будь-який винахід та не більше одного одночасного використання на один Винахід. Під час Відпочинку ми відновлюєте 1д4 витрачені заряди винахідництва.</Feature>
+                <Feature Caption="Нескінченне Майстрування" NoBorder="true">Ви здатні покращувати будь-яку зброю та обладунки, надаючи їм нових властивостей. Одночасно зроблених вами покращень може бути не більше чотирьох.</Feature>
             </div>
         </div>
         <div class="row">
-            <div class="col-5 cs-border p-0 m-0">
-                <Feature Caption="Бойова Роль" NoBorder="true"></Feature>
+            <div class="col-5 cs-border">
+                <Feature Caption="Сила Вогню">Ви здатні як створювати невеликий вогонь так і контролювати вже існуюче полум’я.</Feature>
+                @*<Feature Caption="Автоматон">Ви маєте Автоматона - несвідомого техномагічного супутника, здатного виконувати ваші команди. В бою він має власний хід та власний набір Здібностей, якими може користуватися. У разі знищення Автоматона, ви можете його відбудувати або створити нову його копію.</Feature>*@
+                <Feature Caption="Майстер на Всі Руки" NoBorder="true">Ваші Заряди Вдачі та ваших союзників дають два Куби Рангу, замість одного.</Feature>
             </div>
-            <div class="col cs-border p-0 m-0">
-                <Feature Caption="Бойові Рефлекси">Ваш запас Реакцій на раунд збільшений на одну та збільшується ще на одну на початку кожного наступного Рангу.</Feature>
-                <Feature Caption="Прилив Адреналіну" NoBorder="true">Ваші Навички Тіла збільшені на один. На початку кожного наступного Рангу вони збільшуються ще на один.</Feature>
+            <div class="col cs-border">
+                @foreach (var item in Enumerable.Range(0, 3))
+                {
+                    <input type="checkbox" class="form-check-input ms-1 me-1" />
+                }
             </div>
         </div>
     </div>
     <div class="container-fluid" style="page-break-before: always!important;">
         <div class="row">
             <div class="col-4 cs-border pt-2" style="height: 276px;">
+                <Card Caption="Живий Вогонь" Action="true" Fatigue="true" OneTime="true">Ви можете провести Вогняну Атаку проти всіх сусідніх ворогів.</Card>
+            </div>
+            <div class="col-4 cs-border pt-2" style="height: 276px;">
+                <Card Caption="Імпровізована Модернізація" Maneuver="true" OneTime="true">Ви можете тимчасово покращити на весь бій будь-який предмет відомою вам властивістю.</Card>
             </div>
         </div>
     </div>

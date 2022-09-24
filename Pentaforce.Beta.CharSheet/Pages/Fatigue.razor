@@ -22,7 +22,7 @@
                         <td>Ви не можете зцілювати Шрами</td>
                         @if (Rage)
                         {
-                            <td>1д4</td>
+                            <td>@Dice[Indx(1)]</td>
                         }
                     </tr>
                     <tr>
@@ -34,7 +34,7 @@
                         <td>Ви маєте Заваду на кидках Ініціативи</td>
                         @if (Rage)
                         {
-                            <td>1д6</td>
+                            <td>@Dice[Indx(2)]</td>
                         }
                     </tr>
                     <tr>
@@ -46,7 +46,7 @@
                         <td>Ваш Куб Здоров'я зменшений вдвічі</td>
                         @if (Rage)
                         {
-                            <td>1д8</td>
+                            <td>@Dice[Indx(3)]</td>
                         }
                     </tr>
                     <tr>
@@ -58,7 +58,7 @@
                         <td>Ви не можете зцілювати Поранення</td>
                         @if (Rage)
                         {
-                            <td>1д10</td>
+                            <td>@Dice[Indx(4)]</td>
                         }
                     </tr>
                     <tr>
@@ -70,7 +70,7 @@
                         <td>Ви маєте Заваду на кидках Опору</td>
                         @if (Rage)
                         {
-                            <td>1д12</td>
+                            <td>@Dice[Indx(5)]</td>
                         }
                     </tr>
                     <tr>
@@ -82,7 +82,7 @@
                         <td>Ви маєте Заваду на кидках Навичок</td>
                         @if (Rage)
                         {
-                            <td>1д4+1д8</td>
+                            <td>@Dice[Indx(6)]</td>
                         }
                     </tr>
                     <tr>
@@ -91,10 +91,10 @@
                             <input type="checkbox" class="form-check-input" value="" />
                             <input type="checkbox" class="form-check-input" value="" />
                         </td>
-                        <td>Ви маєте Заваду на кидках Атаки</td>
+                        <td>Ви наносите вдвічі менше Шкоди</td>
                         @if (Rage)
                         {
-                            <td>1д6+1д8</td>
+                            <td>@Dice[Indx(7)]</td>
                         }
                     </tr>
                     <tr>
@@ -103,10 +103,10 @@
                             <input type="checkbox" class="form-check-input" value="" />
                             <input type="checkbox" class="form-check-input" value="" />
                         </td>
-                        <td>Ви маєте Заваду на кидках Захисту</td>
+                        <td>Ви отримуєте вдвічі більше Шкоди</td>
                         @if (Rage)
                         {
-                            <td>1д6+1д10</td>
+                            <td>@Dice[Indx(8)]</td>
                         }
                     </tr>
                 </tbody>
@@ -118,4 +118,11 @@
 @code {
     [Parameter]
     public bool Rage { get; set; }
+
+    [Parameter]
+    public bool BoostedRage { get; set; }
+
+    private List<string> Dice { get; set; } = new List<string> { "", "1д4", "1д6", "1д8", "1д10", "1д12", "1д4+1д8", "1д6+1д8", "1д6+1д10", "1д20", "1д8+1д12" };
+
+    private int Indx(int indx) => BoostedRage ? indx + 1 : indx;
 }

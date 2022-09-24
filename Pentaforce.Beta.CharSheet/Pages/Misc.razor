@@ -19,9 +19,13 @@
             </div>
         </div>
         <div class="col cs-border p-0">
-            <div class="form-floating">
-                <input type="text" class="form-control" id="luckCharges" />
-                <label for="luckCharges">Заряди Вдачі</label>
+            <label class="feature-label">Заряди Вдачі</label>
+            <br class="m-0" />
+            <div class="ms-2">
+                @foreach (var item in Enumerable.Range(0, Luck))
+                {
+                    <input type="checkbox" class="ms-1 me-1" />
+                }
             </div>
         </div>
         <div class="col cs-border p-0">
@@ -30,12 +34,15 @@
                 <label for="initiative">Ініціатива</label>
             </div>
         </div>
-        <div class="col cs-border p-0">
-            <div class="form-floating">
-                <input type="text" class="form-control" id="scars" />
-                <label for="scars">Шрами</label>
+        @if (!NoScars)
+        {
+            <div class="col cs-border p-0">
+                <div class="form-floating">
+                    <input type="text" class="form-control" id="scars" />
+                    <label for="scars">Шрами</label>
+                </div>
             </div>
-        </div>
+        }
     </div>
 </div>
 
@@ -48,4 +55,10 @@
 
     [Parameter]
     public string Initiative { get; set; }
+
+    [Parameter]
+    public int Luck { get; set; }
+
+    [Parameter]
+    public bool NoScars { get; set; }
 }
