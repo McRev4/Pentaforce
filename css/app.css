@@ -49,6 +49,10 @@
         border-left-color: #428bca;
     }
 
+    .callout.callout-passive {
+        border-left-color: #777;
+    }
+
 .img-container {
     margin-top: 1.25rem;
     overflow: hidden;
