@@ -6,6 +6,7 @@
         AdvMelee,
         BasicRanged,
         AdvRanged,
-        BasicInvention
+        BasicInvention,
+        General
     }
 }
