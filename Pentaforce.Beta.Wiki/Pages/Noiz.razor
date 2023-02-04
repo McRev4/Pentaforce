@@ -1,0 +1,99 @@
+﻿@page "/noiz"
+@page "/Pentaforce/noiz"
+
+<div>
+    <CharInfo Name="Нойз" Level="2" Archetype="Воїн" Class="Мисливець" Ancestry="Азмодей" Heritage="Чистокровний"></CharInfo>
+    <Attributes Might="4" Agility="9" Perception="7" Intellect="5" Resolve="4" Luck="5"></Attributes>
+    <Skills Might="4" Agility="9" Perception="7" Intellect="5" Resolve="4" Luck="5" Authority="3" Charisma="3" Mysticism="5" Survival="1"></Skills>
+    <Misc Speed="6" Initiative="1д10" Reaction="2" Luck="5"></Misc>
+    <HP BattleDice="34"></HP>
+    <Defences Light="+4"></Defences>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-5 p-0 m-0">
+                <Fatigue></Fatigue>
+            </div>
+            <div class="col p-0 m-0 cs-border">
+                <Feature Caption="Здобич">Один раз за свій хід ви можете оголосити будь-якого ворога своєю Здобиччю. Ваші Атаки проти Здобичі підсилені Кубом Мисливця, розмір якого збільшується з часом.</Feature>
+                <Feature Caption="Мітка Мисливця">Наприкінці кожного свого ходу ваша Здобич робить Опор Розумом. Якщо він неуспішний, розмір вашого Куба Мисливця збільшується. Інакше ефект Здобичі спадає з неї, а ваш Куб Мисливця зменшується.</Feature>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-5 cs-border">
+                <Feature Caption="Бойова Роль - Підтримка Здалеку" NoBorder="true">Коли ви атакуєте, один союзник, якому Загрожує ваша ціль, може використати Куб Здоров’я щоб отримати Адреналін. Також якщо ціль є вашою Здобиччю, союзник додатково отримує Куб Мисливця Адреналіну.</Feature>
+            </div>
+            <div class="col cs-border">
+                <table class="table table-sm table-bordered mt-3 mb-3 text-center">
+                    <thead>
+                        <tr>
+                            @foreach (var item in Dice.Take(5))
+                            {
+                                <td scope="col">@item</td>
+                            }
+                        </tr>
+                        <tr>
+                            @foreach (var item in Dice.Skip(5))
+                            {
+                                <td scope="col">@item</td>
+                            }
+                        </tr>
+                    </thead>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid" style="page-break-before: always!important;">
+        <div class="row">
+            <div class="col-4 cs-border pt-2" style="height: 276px;">
+                <Card Caption="Вогонь у Жилах" Reaction="true" OneTime="true" FontSize="13">
+                    <div class="row">
+                        <div class="col-3">
+                            <label class="fst-italic">Умова:</label>
+                        </div>
+                        <div class="col">
+                            <label>Ви отримуєте Фізичну або Природну Шкоду</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-3">
+                            <label class="fst-italic">Ефект:</label>
+                        </div>
+                        <div class="col">
+                            <label>Ви можете нанести одному сусідньому з вами ворогу Вогняну Шкоду у тому ж розмірі, що й отримана вами Шкода.</label>
+                        </div>
+                    </div>
+                </Card>
+            </div>
+            <div class="col-4 cs-border pt-2" style="height: 276px">
+                <Card Caption="Дар Прокляття" Action="true" OneTime="true" Fatigue="true">Ви можете провести Ближню Некротичну Атаку. При попаданні ви відновлюєте кількість здоров’я, рівну нанесеній Шкоді.</Card>
+            </div>
+            <div class="col-4 cs-border pt-2" style="height: 276px;">
+                <Card Caption="Спланований Постріл" Reaction="true">
+                    <div class="row">
+                        <div class="col-3">
+                            <label class="fst-italic">Умова:</label>
+                        </div>
+                        <div class="col">
+                            <label>Ваша Здобич робить успішний Опір проти цього ефекту</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-3">
+                            <label class="fst-italic">Ефект:</label>
+                        </div>
+                        <div class="col">
+                            <label>Ви можете нанести їй Куб Мисливця Шкоди дальньою зброєю.</label>
+                        </div>
+                    </div>
+                </Card>
+            </div>
+            <div class="col-4 cs-border pt-2" style="height: 276px;">
+                <Card Caption="Розмірений Постріл" Maneuver="true">Ви можете використовувати Куб Мисливця двічі за Атаку цього ходу.</Card>
+            </div>
+        </div>
+    </div>
+</div>
+
+@code {
+    private List<string> Dice { get; set; } = new List<string> { "1д4", "1д6", "1д8", "1д10", "1д12", "1д4+1д8", "1д6+1д8", "1д6+1д10", "1д20", "1д8+1д12" };
+}

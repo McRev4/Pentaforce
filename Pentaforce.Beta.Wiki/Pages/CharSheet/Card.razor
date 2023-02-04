@@ -1,0 +1,74 @@
+﻿<div class="container-fluid p-0">
+    <div class="row mb-2">
+        <div class="col-8">
+            <h5 class="m-0">@Caption</h5>
+            <div class="row">
+                @if (OneTime)
+                {
+                    <div class="col-1">
+                        <i class="bi bi-fire"></i>
+                    </div>
+                }
+                @if (Fatigue)
+                {
+                    <div class="col-1">
+                        <i class="bi bi-record-circle-fill"></i>
+                    </div>
+                }
+                <div class="col align-middle">
+                    <p class="m-0 fs-12px" style="display: inline;"><b>@GetName()</b></p>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <img src="@GetImage()" class="img-fluid" />
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <p class="m-0" style="font-size: @(FontSize)px;">@ChildContent</p>
+        </div>
+    </div>
+</div>
+
+@code {
+    [Parameter]
+    public bool Action { get; set; }
+
+    [Parameter]
+    public bool Maneuver { get; set; }
+
+    [Parameter]
+    public bool Reaction { get; set; }
+
+    [Parameter]
+    public string Caption { get; set; }
+
+    [Parameter]
+    public RenderFragment ChildContent { get; set; }
+
+    [Parameter]
+    public int FontSize { get; set; } = 16;
+
+    [Parameter]
+    public bool OneTime { get; set; }
+
+    [Parameter]
+    public bool Fatigue { get; set; }
+
+    private string GetImage()
+    {
+        if (Action) return "images/fist.png";
+        if (Maneuver) return "images/tread.png";
+        if (Reaction) return "images/doubled.png";
+        return string.Empty;
+    }
+
+    private string GetName()
+    {
+        if (Action) return "Дія";
+        if (Maneuver) return "Маневр";
+        if (Reaction) return "Реакція";
+        return string.Empty;
+    }
+}

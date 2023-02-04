@@ -1,0 +1,74 @@
+﻿<div class="container-fluid">
+    <div class="row text-center">
+        <div class="col cs-border">
+            <b>Міць</b>
+            <h4>@Might</h4>
+        </div>
+        <div class="col cs-border">
+            <b>Прудкість</b>
+            <h4>@Agility</h4>
+        </div>
+        <div class="col cs-border">
+            <b>Сприйняття</b>
+            <h4>@Perception</h4>
+        </div>
+        <div class="col cs-border">
+            <b>Розум</b>
+            <h4>@Intellect</h4>
+        </div>
+        <div class="col cs-border">
+            <b>Рішучість</b>
+            <h4>@Resolve</h4>
+        </div>
+        <div class="col cs-border">
+            <b>Вдача</b>
+            <h4>@Luck</h4>
+        </div>
+    </div>
+    <div class="row text-center fs-10px">
+        <div class="col cs-border">
+            <p class="mb-0">Опір</p>
+            <p class="mb-0 fs-5">+@(Math.Round(Might / 2))</p>
+        </div>
+        <div class="col cs-border">
+            <p class="mb-0">Опір</p>
+            <p class="mb-0 fs-5">+@(Math.Round(Agility / 2))</p>
+        </div>
+        <div class="col cs-border">
+            <p class="mb-0">Опір</p>
+            <p class="mb-0 fs-5">+@(Math.Round(Perception / 2))</p>
+        </div>
+        <div class="col cs-border">
+            <p class="mb-0">Опір</p>
+            <p class="mb-0 fs-5">+@(Math.Round(Intellect / 2))</p>
+        </div>
+        <div class="col cs-border">
+            <p class="mb-0">Опір</p>
+            <p class="mb-0 fs-5">+@(Math.Round(Resolve / 2))</p>
+        </div>
+        <div class="col cs-border">
+            <p class="mb-0">Опір</p>
+            <p class="mb-0 fs-5">+@(Math.Round(Luck / 2))</p>
+        </div>
+    </div>
+</div>
+
+@code {
+    [Parameter]
+    public double Might { get; set; }
+
+    [Parameter]
+    public double Agility { get; set; }
+
+    [Parameter]
+    public double Perception { get; set; }
+
+    [Parameter]
+    public double Intellect { get; set; }
+
+    [Parameter]
+    public double Resolve { get; set; }
+
+    [Parameter]
+    public double Luck { get; set; }
+}
