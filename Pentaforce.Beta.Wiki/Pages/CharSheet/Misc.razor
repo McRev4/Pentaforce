@@ -1,48 +1,67 @@
-﻿<div class="container-fluid fs-12px">
+﻿<div class="container-fluid fs-12px" style="padding-left: 0.75rem; padding-right: 0.75rem;">
     <div class="row">
-        <div class="col cs-border p-0">
-            <div class="form-floating">
-                <input type="text" class="form-control text-center fs-5" id="speed" value="@Speed" />
-                <label for="speed">Швидкість</label>
-            </div>
-        </div>
-        <div class="col cs-border p-0">
-            <div class="form-floating">
-                <input type="text" class="form-control text-center fs-5" id="reaction" value="@Reaction" />
-                <label for="reaction">Реакції</label>
-            </div>
-        </div>
-        <div class="col cs-border p-0">
-            <div class="form-floating">
-                <input type="text" class="form-control text-center fs-5" id="tierDice" value="1д4" />
-                <label for="tierDice">Куб Рангу</label>
-            </div>
-        </div>
-        <div class="col cs-border p-0">
-            <label class="feature-label">Заряди Вдачі</label>
-            <br class="m-0" />
-            <div class="ms-2">
-                @foreach (var item in Enumerable.Range(0, Luck))
-                {
-                    <input type="checkbox" class="ms-1 me-1" />
-                }
-            </div>
-        </div>
-        <div class="col cs-border p-0">
-            <div class="form-floating">
-                <input type="text" class="form-control text-center fs-5" id="initiative" value="@Initiative" />
-                <label for="initiative">Ініціатива</label>
-            </div>
-        </div>
-        @if (!NoScars)
-        {
-            <div class="col cs-border p-0">
-                <div class="form-floating">
-                    <input type="text" class="form-control" id="scars" />
-                    <label for="scars">Шрами</label>
+        <div class="col">
+            <div class="row">
+                <div class="col-3 cs-border p-0">
+                    <div class="form-floating">
+                        <input type="text" class="form-control text-center fs-5" id="healDice" value="2д4" />
+                        <label for="healDice" class="box-label" style="padding-top: 1rem!important;">Куби Відновлення</label>
+                    </div>
+                </div>
+                <div class="col cs-border p-0">
+                    <div class="form-floating">
+                        <input type="text" class="form-control text-center fs-5" id="tierDice" value="1д4" />
+                        <label for="tierDice" style="padding-left: 0.25rem;">Куб Рангу</label>
+                    </div>
+                </div>
+                <div class="col cs-border p-0">
+                    <div class="form-floating">
+                        <input type="text" class="form-control text-center fs-5" id="reaction" value="@Reaction" />
+                        <label for="reaction">Реакції</label>
+                    </div>
+                </div>
+                <div class="col cs-border p-0">
+                    <div class="form-floating">
+                        <input type="text" class="form-control text-center fs-5" id="speed" value="@Speed" />
+                        <label for="speed">Швидкість</label>
+                    </div>
+                </div>
+                <div class="col cs-border p-0">
+                    <div class="form-floating">
+                        <input type="text" class="form-control text-center fs-5" id="initiative" value="@Initiative" />
+                        <label for="initiative">Ініціатива</label>
+                    </div>
                 </div>
             </div>
-        }
+            <div class="row">
+                <div class="col cs-border p-0">
+                    <label class="feature-label">Заряди Відновлення</label>
+                    <br class="m-0" />
+                    <div class="ms-2">
+                        @foreach (var item in Enumerable.Range(0, HealCount))
+                        {
+                            <input type="checkbox" class="charge" />
+                        }
+                    </div>
+                </div>
+                <div class="col cs-border p-0">
+                    <label class="feature-label">Заряди Вдачі</label>
+                    <br class="m-0" />
+                    <div class="ms-2">
+                        @foreach (var item in Enumerable.Range(0, Luck))
+                        {
+                            <input type="checkbox" class="charge" />
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-3 cs-border p-0">
+            <div class="form-floating">
+                <textarea class="form-control text-center fs-5" id="battleDice" style="height: 104px;">@BattleDice</textarea>
+                <label for="battleDice">Бойові Куби</label>
+            </div>
+        </div>
     </div>
 </div>
 
@@ -61,4 +80,14 @@
 
     [Parameter]
     public bool NoScars { get; set; }
+
+
+    [Parameter]
+    public int HealCount { get; set; } = 10;
+
+    [Parameter]
+    public bool NoWounds { get; set; }
+
+    [Parameter]
+    public string BattleDice { get; set; }
 }
