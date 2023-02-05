@@ -15,14 +15,20 @@
                         <i class="bi bi-record-circle-fill"></i>
                     </div>
                 }
-                <div class="col align-middle">
-                    <p class="m-0 fs-12px" style="display: inline;"><b>@GetName()</b></p>
-                </div>
+                @if (!string.IsNullOrWhiteSpace(GetName()))
+                {
+                    <div class="col align-middle">
+                        <p class="m-0 fs-12px" style="display: inline;"><b>@GetName()</b></p>
+                    </div>
+                }
             </div>
         </div>
-        <div class="col">
-            <img src="@GetImage()" class="img-fluid" />
-        </div>
+        @if (!string.IsNullOrWhiteSpace(GetImage()))
+        {
+            <div class="col">
+                <img src="@GetImage()" class="img-fluid" />
+            </div>
+        }
     </div>
     <div class="row">
         <div class="col">
