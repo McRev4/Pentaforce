@@ -10,7 +10,7 @@
                 </div>
                 <div class="col-12 cs-border p-0">
                     <div class="form-floating">
-                        <input type="text" class="form-control text-center fs-6 box-input" id="wound" value="@(Health / 2)" />
+                        <input type="text" class="form-control text-center fs-6 box-input" id="wound" value="@(Health / WoundDivider)" />
                         <label for="wound" class="box-label">Поранення</label>
                     </div>
                 </div>
@@ -33,5 +33,8 @@
 
 @code {
     [Parameter]
-    public int Health { get; set; } = 80;
+    public int Health { get; set; } = 60;
+
+    [Parameter]
+    public int WoundDivider { get; set; } = 2;
 }
