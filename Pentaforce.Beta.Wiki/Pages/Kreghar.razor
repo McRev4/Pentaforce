@@ -2,22 +2,46 @@
 @page "/Pentaforce/kreghar"
 
 <div>
-    <CharInfo Name="Крегхар" Level="2" Archetype="Воїн" Class="Варвар" Ancestry="Драконіанин" Heritage="Драконовірець"></CharInfo>
+    <CharInfo Name="Крегхар" Archetype="Воїн" Class="Варвар" Ancestry="Драконіанин" Heritage="Драконовірець"></CharInfo>
     <Attributes Might="10" Agility="9" Perception="4" Intellect="8" Resolve="3" Luck="5"></Attributes>
-    <Skills Might="10" Agility="9" Perception="4" Intellect="8" Resolve="3" Luck="5" Mysticism="5" Physical="1"></Skills>
-    <Misc Speed="6" Reaction="2" Luck="5" Initiative="1д4"></Misc>
-    <HP BattleDice="39"></HP>
-    <Defences></Defences>
+    <Skills Might="10" Agility="9" Perception="4" Intellect="8" Resolve="3" Luck="5" Knowledge="1" Physical="1" Mysticism="5" Endurance="3" Swiftness="3"></Skills>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col p-0">
+                <Misc Reaction="2" Speed="5" Initiative="1д4" Luck="5" BattleDice="39"></Misc>
+                <HP WoundDivider="4"></HP>
+            </div>
+            <div class="col-3 cs-border p-0">
+                <div class="form-floating">
+                    <input type="text" class="form-control" id="wounds" style="height: 12.9rem;" />
+                    <label for="wounds">Травми</label>
+                </div>
+            </div>
+        </div>
+    </div>
+    <Defences Fire="+5" Bludgeoning="+2" Piercing="+2" Slashing="+2"></Defences>
     <div class="container-fluid">
         <div class="row">
             <div class="col-5 p-0 m-0">
-                <Fatigue Rage="true"></Fatigue>
+                <Fatigue Rage="true" BoostedRage="true"></Fatigue>
             </div>
             <div class="col p-0 m-0 cs-border">
-                <Feature Caption="Несамовита Лють">Ваші атаки підсилені Кубом Люті, розмір якого залежить від вашого Виснаження. Також в бою ви ігноруєте останній негативний ефект Виснаження.</Feature>
-                <Feature Caption="Шаленство">Отримуючи одну Втому, ви можете використовувати Куб Люті двічі за Атаку.</Feature>
-                <Feature Caption="Агресивний Натиск">Отримуючи одну Втому, ви можете збільшити свою Швидкість на значення вашого Виснаження на один хід.</Feature>
-                <Feature Caption="Швидке Відновлення" NoBorder="true">Під час Відпочинку ви не знімаєте Виснаження як зазвичай. Натомість ви Куб Здоров'я Втоми.</Feature>
+                <Feature Caption="Сила Природи">Тип шкоди вашого драконячого пращура - Вогняна.</Feature>
+                <Feature Caption="Шаленство">В бою ви ігноруєте два останні негативні ефекти Виснаження.</Feature>
+                <Feature Caption="Несамовита Лють">Ваші атаки підсилені Кубом Люті. Отримуючи одну Втому під час Атаки, ви можете подвоїти кількість Кубів Люті.</Feature>
+                <Feature Caption="Швидке Відновлення">Під час Відпочинку ви не знімаєте Виснаження за звичайними правилами. Натомість ви кидаєте Куб Відновлення та позбавляєтесь відповідної кількості Втоми.</Feature>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-5 cs-border">
+                <Feature Caption="Драконячі Ознаки">Драконячий Подих; Чиста Кров - Драконяча Луска</Feature>
+                <Feature Caption="Драконячий Характер">Гонор</Feature>
+                <Feature Caption="Бойова Підготовка" NoBorder="true">Біг</Feature>
+            </div>
+            <div class="col cs-border">
+                <Feature Caption="Бойова Роль: Спеціаліст - Нестримна Лють" NoBorder="true">
+                    У бою ви ігноруєте два останні негативні ефекти Виснаження. Ви отримуєте Травми при досягненні четвертини максимального Здоров'я. Також розмір вашого Куба Люті збільшений.
+                </Feature>
             </div>
         </div>
         <div class="row">
@@ -30,13 +54,45 @@
     <div class="container-fluid" style="page-break-before: always!important;">
         <div class="row">
             <div class="col-4 cs-border pt-2" style="height: 276px;">
-                <Card Caption="Зціпивши Зуби" Reaction="true">
+                <Card FontSize="12">
+                    <ul style="padding-left: 1rem">
+                        <li>Уповільнений - ваша швидкість зменшена вдвічі</li>
+                        <li>Знерухомлений - ви не можете використовувати Маневри</li>
+                        <li>Приголомшений - ви не можете використовувати Дії</li>
+                        <li>Ошелешений - ви не можете використовувати Реакції</li>
+                        <li>Ослаблений - ви наносите вдвічі менше шкоди</li>
+                        <li>Заляканий - ви маєте Заваду на кидках Атаки та Захисту</li>
+                    </ul>
+                </Card>
+            </div>
+            <div class="col-4 cs-border pt-2" style="height: 276px;">
+                <Card Action="true" Caption="Базова Атака" Fatigue="true">
+                    Проведіть Ближню Дроблячу Атаку або Ближню чи Дальню Атаку із застосуванням зброї.
+                </Card>
+            </div>
+            <div class="col-4 cs-border pt-2" style="height: 276px;">
+                <Card Maneuver="true" Caption="Пересування">
+                    Порухайтесь на свою Швидкість.
+                </Card>
+            </div>
+            <div class="col-4 cs-border pt-2" style="height: 276px;">
+                <Card Action="true" Fatigue="true" OneTime="true" Caption="Драконячий Подих">
+                    Проведіть Атаку Сили Природи проти всіх створінь, що знаходяться в дотичному до вас конусі дальністю три або по-прямій із дальністю п'ять.
+                </Card>
+            </div>
+            <div class="col-4 cs-border pt-2" style="height: 276px;">
+                <Card Maneuver="true" Fatigue="true" Caption="Агресивний Натиск">
+                    Порухайтесь на свою Швидкість, збільшену на значення вашого Виснаження.
+                </Card>
+            </div>
+            <div class="col-4 cs-border pt-2" style="height: 276px;">
+                <Card Reaction="true" Fatigue="true" Caption="Зціпивши Зуби">
                     <div class="row">
                         <div class="col-3">
                             <label class="fst-italic">Умова:</label>
                         </div>
                         <div class="col">
-                            <label>Ви отримуєте Шкоду</label>
+                            <label>Ви отримуєте шкоду</label>
                         </div>
                     </div>
                     <div class="row">
@@ -44,7 +100,7 @@
                             <label class="fst-italic">Ефект:</label>
                         </div>
                         <div class="col">
-                            <label>Ви можете зменшити її на Куб Люті.</label>
+                            <label>Зменшіть шкоду на Куб Люті.</label>
                         </div>
                     </div>
                 </Card>
