@@ -1,59 +1,30 @@
-﻿<div class="container-fluid fs-12px">
+﻿<div class="container-fluid fs-12px" style="padding-left: 0.75rem; padding-right: 0.75rem;">
     <div class="row">
-        <div class="col-2 cs-border p-0">
-            <div class="form-floating">
-                <input type="text" class="form-control text-center fs-5" id="hpmax" value="@Health" />
-                <label for="hpmax">Макс. Здоров'я</label>
-            </div>
-        </div>
-        <div class="col-2 cs-border p-0">
-            <div class="form-floating">
-                <input type="text" class="form-control text-center fs-5" id="wound" value="@(Health / 2)" />
-                <label for="wound">Поранення</label>
-            </div>
-        </div>
-        <div class="col-2 cs-border p-0">
-            <div class="form-floating">
-                <input type="text" class="form-control text-center fs-5" id="healDice" value="2д4" />
-                <label for="healDice">Куб Здоров'я</label>
-            </div>
-        </div>
-        <div class="col cs-border p-0">
-            <label class="feature-label">Заряди Здоров'я</label>
-            <br class="m-0" />
-            <div class="ms-3">
-                @foreach (var item in Enumerable.Range(0, HealCount))
-                {
-                    <input type="checkbox" class="ms-1 me-1" />
-                }
-            </div>
-        </div>
-        @if (!NoWounds)
-        {
-            <div class="col-2 cs-border p-0">
-                <div class="form-floating">
-                    <input type="text" class="form-control" id="woundCount" />
-                    <label for="woundCount">Поранення</label>
+        <div class="col-2">
+            <div class="row">
+                <div class="col-12 cs-border p-0">
+                    <div class="form-floating">
+                        <input type="text" class="form-control text-center fs-6 box-input" id="hpmax" value="@Health" />
+                        <label for="hpmax" class="box-label">Максимум</label>
+                    </div>
+                </div>
+                <div class="col-12 cs-border p-0">
+                    <div class="form-floating">
+                        <input type="text" class="form-control text-center fs-6 box-input" id="wound" value="@(Health / 2)" />
+                        <label for="wound" class="box-label">Поранення</label>
+                    </div>
                 </div>
             </div>
-        }
-    </div>
-    <div class="row">
+        </div>
         <div class="col cs-border p-0">
             <div class="form-floating">
-                <textarea class="form-control" id="hp" style="height: 80px;"></textarea>
+                <textarea class="form-control" id="hp" style="height: 93px;"></textarea>
                 <label for="hp">Здоров'я</label>
             </div>
         </div>
-        <div class="col-3 cs-border p-0">
-            <div class="form-floating">
-                <textarea class="form-control text-center fs-5" id="battleDice" style="height: 80px;">@BattleDice</textarea>
-                <label for="battleDice">Бойові Куби</label>
-            </div>
-        </div>
         <div class="col cs-border p-0">
             <div class="form-floating">
-                <textarea class="form-control" id="adrenaline" style="height: 80px;"></textarea>
+                <textarea class="form-control" id="adrenaline" style="height: 93px;"></textarea>
                 <label for="adrenaline">Адреналін</label>
             </div>
         </div>
@@ -63,13 +34,4 @@
 @code {
     [Parameter]
     public int Health { get; set; } = 80;
-
-    [Parameter]
-    public string BattleDice { get; set; }
-
-    [Parameter]
-    public int HealCount { get; set; } = 10;
-
-    [Parameter]
-    public bool NoWounds { get; set; }
 }
