@@ -4,11 +4,11 @@
 <div>
     <CharInfo Name="Нойз" Level="2" Archetype="Воїн" Class="Мисливець" Ancestry="Азмодей" Heritage="Чистокровний"></CharInfo>
     <Attributes Might="4" Agility="9" Perception="7" Intellect="5" Resolve="4" Luck="5"></Attributes>
-    <Skills Might="4" Agility="9" Perception="7" Intellect="5" Resolve="4" Luck="5" Authority="3" Charisma="3" Mysticism="5"></Skills>
+    <Skills Might="4" Agility="9" Perception="7" Intellect="5" Resolve="4" Luck="5" Survival="1" Authority="3" Charisma="3" Mysticism="5" Dexterity="3" Awareness="3"></Skills>
     <div class="container-fluid">
         <div class="row">
             <div class="col p-0">
-                <Misc Reaction="1" Speed="5" Initiative="1д10" BattleDice="34" Luck="5"></Misc>
+                <Misc Reaction="2" Speed="5" Initiative="1д10" BattleDice="34" Luck="5"></Misc>
                 <HP></HP>
             </div>
             <div class="col-3 cs-border p-0">
@@ -26,12 +26,21 @@
                 <Fatigue></Fatigue>
             </div>
             <div class="col p-0 m-0 cs-border">
+                <Feature Caption="Мітка Мисливця">
+                    При підготовці до раунду ви можете накласти на будь-якого ворога Мітку Мисливця до Опору Розумом. Ваші Атаки проти таких цілей підсилені Кубом Мисливця, розмір якого збільшується коли ціль Мітки Мисливця провалює Опір проти неї. 
+                    Якщо ж вона успішно проходить Опір проти Мітки Мисливця, розмір вашого Куби Мисливця зменшується.
+                </Feature>
             </div>
         </div>
         <div class="row">
             <div class="col-5 cs-border">
+                <Feature Caption="Бойова Підготовка">Стільба з Лука</Feature>
+                <Feature Caption="Безжалісне Полювання" NoBorder="true">Використовуючи Заряд Вдачі на кидку навички Виживання, ви не отримуєте Втому.</Feature>
             </div>
             <div class="col cs-border">
+                <Feature Caption="Бойова Роль: Лідер - Підтримка Здалеку" NoBorder="true">
+                    Коли ви проводите успішну Атаку, один союзник, якому Загрожує ваша ціль, може використати заряд Відновлення щоб отримати Адреналін. Якщо ціль має вашу Мітку Мисливця, союзник додатково отримує Адреналін у розмірі вашого Куба Мисливця.
+                </Feature>
             </div>
         </div>
         <div class="row">
@@ -66,6 +75,11 @@
                 </Card>
             </div>
             <div class="col-4 cs-border pt-2" style="height: 276px;">
+                <Card Maneuver="true" Caption="Розмірений Постріл">
+                    Подвойте кількість Кубів Мисливця цього ходу.
+                </Card>
+            </div>
+            <div class="col-4 cs-border pt-2" style="height: 276px;">
                 <Card Action="true" OneTime="true" Fatigue="true" Caption="Дар Прокляття">
                     Проведіть Ближню Некротичну Атаку. Ви отримуєте Адреналін у розмірі, рівному нанесеній шкоді.
                 </Card>
@@ -86,6 +100,26 @@
                         </div>
                         <div class="col">
                             <label>Нанесіть сусідньому з вами ворогу Вогняну шкоду у тому ж розмірі, що й отримана вами шкода.</label>
+                        </div>
+                    </div>
+                </Card>
+            </div>
+            <div class="col-4 cs-border pt-2" style="height: 276px;">
+                <Card Reaction="true" Caption="Спланований Постріл">
+                    <div class="row">
+                        <div class="col-3">
+                            <label class="fst-italic">Умова:</label>
+                        </div>
+                        <div class="col">
+                            <label>Ціль вашої Мітки Мисливця успішно проходить Опір проти неї</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-3">
+                            <label class="fst-italic">Ефект:</label>
+                        </div>
+                        <div class="col">
+                            <label>Нанесіть цілі Куб Мисливця шкоди дальньою зброєю.</label>
                         </div>
                     </div>
                 </Card>
