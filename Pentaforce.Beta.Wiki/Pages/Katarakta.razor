@@ -2,6 +2,75 @@
 @page "/Pentaforce/katarakta"
 
 <div>
+    <CharInfo></CharInfo>
+    <Attributes></Attributes>
+    <Skills></Skills>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col p-0">
+                <Misc></Misc>
+                <HP></HP>
+            </div>
+            <div class="col-3 cs-border p-0">
+                <div class="form-floating">
+                    <input type="text" class="form-control" id="wounds" style="height: 12.9rem;" />
+                    <label for="wounds">Травми</label>
+                </div>
+            </div>
+        </div>
+    </div>
+    <Defences></Defences>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-5 p-0 m-0">
+                <Fatigue></Fatigue>
+            </div>
+            <div class="col p-0 m-0 cs-border">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-5 cs-border">
+            </div>
+            <div class="col cs-border">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-5 cs-border">
+            </div>
+            <div class="col cs-border">
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid" style="page-break-before: always!important;">
+        <div class="row">
+            <div class="col-4 cs-border pt-2" style="height: 276px;">
+                <Card FontSize="11">
+                    <ul style="padding-left: 1rem">
+                        <li>Уповільнений - ваша швидкість зменшена вдвічі</li>
+                        <li>Знерухомлений - ви не можете використовувати Маневри</li>
+                        <li>Приголомшений - ви не можете використовувати Дії</li>
+                        <li>Ошелешений - ви не можете використовувати Реакції</li>
+                        <li>Ослаблений - ви наносите вдвічі менше шкоди</li>
+                        <li>Заляканий - ви маєте Заваду на кидках Атаки та Захисту</li>
+                        <li>Опрокинений - ви маєте Критичну Заваду на кидки Захисту проти Ближніх Атак</li>
+                    </ul>
+                </Card>
+            </div>
+            <div class="col-4 cs-border pt-2" style="height: 276px;">
+                <Card Action="true" Caption="Базова Атака">
+                    Проведіть Ближню Дроблячу Атаку або Ближню чи Дальню Атаку із застосуванням зброї.
+                </Card>
+            </div>
+            <div class="col-4 cs-border pt-2" style="height: 276px;">
+                <Card Maneuver="true" Caption="Пересування">
+                    Порухайтесь на свою Швидкість.
+                </Card>
+            </div>
+        </div>
+    </div>
+</div>
+
+@*<div>
     <CharInfo Name="Катаракта" Level="2" Archetype="Відьмак" Class="Винахідник" Ancestry="Імерит" Heritage="Вогняний"></CharInfo>
     <Attributes Might="9" Agility="4" Perception="4" Intellect="10" Resolve="9" Luck="2"></Attributes>
     <Skills Might="9" Agility="4" Perception="4" Intellect="10" Resolve="9" Luck="2" Authority="5" Investigation="4" Dexterity="1" Science="1" Occultism="1" Awareness="3"></Skills>
@@ -22,7 +91,7 @@
         <div class="row">
             <div class="col-5 cs-border">
                 <Feature Caption="Сила Вогню">Ви здатні як створювати невеликий вогонь так і контролювати вже існуюче полум’я.</Feature>
-                @*<Feature Caption="Автоматон">Ви маєте Автоматона - несвідомого техномагічного супутника, здатного виконувати ваші команди. В бою він має власний хід та власний набір Здібностей, якими може користуватися. У разі знищення Автоматона, ви можете його відбудувати або створити нову його копію.</Feature>*@
+                @*<Feature Caption="Автоматон">Ви маєте Автоматона - несвідомого техномагічного супутника, здатного виконувати ваші команди. В бою він має власний хід та власний набір Здібностей, якими може користуватися. У разі знищення Автоматона, ви можете його відбудувати або створити нову його копію.</Feature>
                 <Feature Caption="Майстер на Всі Руки" NoBorder="true">Ваші Заряди Вдачі та ваших союзників дають два Куби Рангу, замість одного.</Feature>
             </div>
             <div class="col cs-border">
@@ -43,4 +112,4 @@
             </div>
         </div>
     </div>
-</div>
+</div>*@
