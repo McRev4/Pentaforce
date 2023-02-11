@@ -10,7 +10,7 @@
                 </div>
                 <div class="col-12 cs-border p-0">
                     <div class="form-floating">
-                        <input type="text" class="form-control text-center fs-6 box-input" id="wound" value="@(Health / WoundDivider)" />
+                        <input type="text" class="form-control text-center fs-6 box-input" id="wound" value="@(NoWounds ? string.Empty : (Health / WoundDivider))" />
                         <label for="wound" class="box-label">Поранення</label>
                     </div>
                 </div>
@@ -37,4 +37,7 @@
 
     [Parameter]
     public int WoundDivider { get; set; } = 2;
+
+    [Parameter]
+    public bool NoWounds { get; set; }
 }

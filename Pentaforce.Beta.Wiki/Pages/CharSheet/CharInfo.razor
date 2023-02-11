@@ -7,10 +7,16 @@
             <input type="text" class="form-control fs-10px" id="charLevel" value="@Level" />
         </div>
         <div class="col">
-            <input type="text" class="form-control fs-10px" id="charClass" value="Архетип/Клас: @Archetype/@Class" />
+            @if (!NoClass)
+            {
+                <input type="text" class="form-control fs-10px" id="charClass" value="Архетип/Клас: @Archetype/@Class" />
+            }
         </div>
         <div class="col">
-            <input type="text" class="form-control fs-10px" id="charRace" value="Рід/Спадщина: @Ancestry/@Heritage" />
+            @if (!NoClass)
+            {
+                <input type="text" class="form-control fs-10px" id="charRace" value="Рід/Спадщина: @Ancestry/@Heritage" />
+            }
         </div>
     </div>
 </div>
@@ -34,4 +40,6 @@
     [Parameter]
     public string Heritage { get; set; }
 
+    [Parameter]
+    public bool NoClass { get; set; }
 }

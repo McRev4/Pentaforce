@@ -2,13 +2,13 @@
 @page "/Pentaforce/katarakta"
 
 <div>
-    <CharInfo></CharInfo>
-    <Attributes></Attributes>
-    <Skills></Skills>
+    <CharInfo Name="Катаракта" Level="2" Archetype="Відьмак" Class="Винахідник" Ancestry="Імерит" Heritage="Вогняний"></CharInfo>
+    <Attributes Might="9" Agility="4" Perception="4" Intellect="10" Resolve="9" Luck="2"></Attributes>
+    <Skills Might="9" Agility="4" Perception="4" Intellect="10" Resolve="9" Luck="2" Authority="5" Investigation="3+1" Awareness="3" Dexterity="1" Science="1" Occultism="1"></Skills>
     <div class="container-fluid">
         <div class="row">
             <div class="col p-0">
-                <Misc></Misc>
+                <Misc Reaction="1" Speed="5" Initiative="1д8" BattleDice="38" Luck="2"></Misc>
                 <HP></HP>
             </div>
             <div class="col-3 cs-border p-0">
@@ -19,25 +19,33 @@
             </div>
         </div>
     </div>
-    <Defences></Defences>
+    <Defences Fire="+5"></Defences>
     <div class="container-fluid">
         <div class="row">
             <div class="col-5 p-0 m-0">
                 <Fatigue></Fatigue>
             </div>
             <div class="col p-0 m-0 cs-border">
+                <Feature Caption="Майстер на Всі Руки" NoBorder="true">Ваші Заряди Вдачі дають два Куби Рангу, замість одного.</Feature>
+                <Feature Caption="Сила Вогню">Ви здатні як створювати невеликий вогонь так і контролювати вже існуюче полум’я.</Feature>
+                <Feature Caption="Предметне Покращення">Ви здатні покращувати будь-яку зброю та обладунки, надаючи їм нових властивостей. Одночасно зроблених вами покращень може бути не більше чотирьох.</Feature>
             </div>
         </div>
         <div class="row">
             <div class="col-5 cs-border">
+                <Feature Caption="Винаходи" NoBorder="true">
+                    Ви маєте доступ до трьох зарядів винахідництва. Витративши один заряд та трохи часу, ви можете створити будь-який винахід але не більше одного одночасного використання на один винахід. Під час Відпочинку ви відновлюєте 1д2 витрачені заряди винахідництва.
+                </Feature>
+                <Feature Caption="Бойова Роль: Спеціаліст - Техномагічний геній" NoBorder="true">
+                    Максимальна кількість одночасно зроблених вами покращень збільшена на одне. Максимальна кількість тимчасових покращень на бій збільшена на одне, а кількість відомих вам тимчасових властивостей збільшена на дві. Кількість покращень Автоматона збільшена на одне.
+                </Feature>
             </div>
             <div class="col cs-border">
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-5 cs-border">
-            </div>
-            <div class="col cs-border">
+                <Feature Caption="Вибуховість">Оберіть зброю. Успішні Атаки нею наносять сусіднім до цілі ворогам 1д4 Звукової Шкоди.</Feature>
+                <Feature Caption="Дроблення">Оберіть зброю. Атаки нею проти Поранених ворогів підсилені Кубом Рангу.</Feature>
+                <Feature Caption="Загострення">Оберіть елемент броні або щит. Коли її носія атакує сусідній ворог, він отримує 1д4 Проникаючої Шкоди.</Feature>
+                <Feature Caption="Отруєння">Оберіть зброю. Успішні Атаки нею роблять ворога Ослабленим на один хід.</Feature>
+                <Feature Caption="Сила Природи" NoBorder="true">Оберіть зброю та змініть її тип Шкоди на будь-який Природний тип.</Feature>
             </div>
         </div>
     </div>
@@ -66,50 +74,26 @@
                     Порухайтесь на свою Швидкість.
                 </Card>
             </div>
+            <div class="col-4 cs-border pt-2" style="height: 276px;">
+                <Card Maneuver="true" OneTime="true" Fatigue="true" Caption="Імпровізована Модернізація">
+                    Покращте на весь бій будь-який предмет відомою вам властивістю.
+                </Card>
+            </div>
+            <div class="col-4 cs-border pt-2" style="height: 276px;">
+                <Card Maneuver="true" OneTime="true" Fatigue="true" Caption="Імпровізована Модернізація">
+                    Покращте на весь бій будь-який предмет відомою вам властивістю.
+                </Card>
+            </div>
+            <div class="col-4 cs-border pt-2" style="height: 276px;">
+                <Card Action="true" Fatigue="true" Caption="Палаюча Лють">
+                    Проведіть Ближню чи Дальню Вогняну Атаку.<br /> <i>для проведення Дальньої Атаки вам не потрібна зброя</i>
+                </Card>
+            </div>
+            <div class="col-4 cs-border pt-2" style="height: 276px;">
+                <Card Action="true" OneTime="true" Fatigue="true" Caption="Живий Вогонь">
+                    Проведіть Вогняну Атаку проти всіх сусідніх ворогів.
+                </Card>
+            </div>
         </div>
     </div>
 </div>
-
-@*<div>
-    <CharInfo Name="Катаракта" Level="2" Archetype="Відьмак" Class="Винахідник" Ancestry="Імерит" Heritage="Вогняний"></CharInfo>
-    <Attributes Might="9" Agility="4" Perception="4" Intellect="10" Resolve="9" Luck="2"></Attributes>
-    <Skills Might="9" Agility="4" Perception="4" Intellect="10" Resolve="9" Luck="2" Authority="5" Investigation="4" Dexterity="1" Science="1" Occultism="1" Awareness="3"></Skills>
-    <Misc Luck="2" Speed="6" Reaction="1" Initiative="1д8"></Misc>
-    <HP BattleDice="38"></HP>
-    <Defences Fire="4"></Defences>
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-5 p-0 m-0">
-                <Fatigue></Fatigue>
-            </div>
-            <div class="col p-0 m-0 cs-border">
-                <Feature Caption="Палаюча Лють">Коли ви проводите Базову Атаку, ви можете змінити тип її Шкоди на Вогняну. Також вам не потрібна зброя щоб проводити Базову Вогняну Дальню Атаку.</Feature>
-                <Feature Caption="Винаходи">У вашій наявні є три заряди винахідництва. Витративши один заряд та трохи часу, ви можете створити будь-який винахід та не більше одного одночасного використання на один Винахід. Під час Відпочинку ми відновлюєте 1д4 витрачені заряди винахідництва.</Feature>
-                <Feature Caption="Нескінченне Майстрування" NoBorder="true">Ви здатні покращувати будь-яку зброю та обладунки, надаючи їм нових властивостей. Одночасно зроблених вами покращень може бути не більше чотирьох.</Feature>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-5 cs-border">
-                <Feature Caption="Сила Вогню">Ви здатні як створювати невеликий вогонь так і контролювати вже існуюче полум’я.</Feature>
-                @*<Feature Caption="Автоматон">Ви маєте Автоматона - несвідомого техномагічного супутника, здатного виконувати ваші команди. В бою він має власний хід та власний набір Здібностей, якими може користуватися. У разі знищення Автоматона, ви можете його відбудувати або створити нову його копію.</Feature>
-                <Feature Caption="Майстер на Всі Руки" NoBorder="true">Ваші Заряди Вдачі та ваших союзників дають два Куби Рангу, замість одного.</Feature>
-            </div>
-            <div class="col cs-border">
-                @foreach (var item in Enumerable.Range(0, 3))
-                {
-                    <input type="checkbox" class="form-check-input ms-1 me-1" />
-                }
-            </div>
-        </div>
-    </div>
-    <div class="container-fluid" style="page-break-before: always!important;">
-        <div class="row">
-            <div class="col-4 cs-border pt-2" style="height: 276px;">
-                <Card Caption="Живий Вогонь" Action="true" Fatigue="true" OneTime="true">Ви можете провести Вогняну Атаку проти всіх сусідніх ворогів.</Card>
-            </div>
-            <div class="col-4 cs-border pt-2" style="height: 276px;">
-                <Card Caption="Імпровізована Модернізація" Maneuver="true" OneTime="true">Ви можете тимчасово покращити на весь бій будь-який предмет відомою вам властивістю.</Card>
-            </div>
-        </div>
-    </div>
-</div>*@
