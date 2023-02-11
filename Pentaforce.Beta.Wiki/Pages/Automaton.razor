@@ -2,23 +2,60 @@
 @page "/Pentaforce/automaton"
 
 <div>
-    <CharInfo Name="Автоматон"></CharInfo>
-    <Attributes></Attributes>
-    <Skills></Skills>
-    <Misc Speed="4" Reaction="1" Initiative="1д6" NoScars="true"></Misc>
-    <HP Health="60" HealCount="5" NoWounds="true" BattleDice="0"></HP>
-    <Defences></Defences>
+    <CharInfo Name="Автоматон" Level="2" NoClass="true"></CharInfo>
+    <Attributes Might="2" Agility="4" Perception="0" Intellect="4" Resolve="4" Luck="2"></Attributes>
+    <Skills Might="2" Agility="4" Perception="0" Intellect="4" Resolve="4" Luck="2"></Skills>
     <div class="container-fluid">
         <div class="row">
-            <div class="col p-0 m-0 cs-border">
+            <div class="col p-0">
+                <Misc Reaction="1" Speed="4" Initiative="1д6" BattleDice="16" Luck="2"></Misc>
+                <HP Health="40" NoWounds="true"></HP>
+            </div>
+            <div class="col-3 cs-border p-0">
+                <div class="form-floating">
+                    <input type="text" class="form-control" id="wounds" style="height: 12.9rem;" />
+                    <label for="wounds">Травми</label>
+                </div>
             </div>
         </div>
     </div>
-    @*<div class="container-fluid" style="page-break-before: always!important;">
-    <div class="row">
-    <div class="col-4 cs-border pt-2" style="height: 276px;">
-    <Card Caption="Test" Action="true">There will be some text</Card>
+    <Defences Bludgeoning="+6" Piercing="+6" Slashing="+6"></Defences>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col p-0 m-0 cs-border">
+                <Feature Caption="Металеве Покриття">
+                    Стійкість до Фізичної Шкоди вашого Автоматона збільшена на шість. <br /> <i>(вже враховано)</i>
+                </Feature>
+            </div>
+        </div>
     </div>
+    <div class="container-fluid" style="page-break-before: always!important;">
+        <div class="row">
+            <div class="col-4 cs-border pt-2" style="height: 276px;">
+                <Card Action="true" Caption="Базова Атака">
+                    Проведіть Ближню Дроблячу Атаку або Ближню чи Дальню Атаку із застосуванням зброї.
+                </Card>
+            </div>
+            <div class="col-4 cs-border pt-2" style="height: 276px;">
+                <Card Maneuver="true" Caption="Пересування">
+                    Порухайтесь на свою Швидкість.
+                </Card>
+            </div>
+            <div class="col-4 cs-border pt-2" style="height: 276px;">
+                <Card Action="true" OneTime="true" Caption="Кислотний Розпорошувач">
+                    Ваш Автоматон проводить Їдку Атаку проти всіх ворогів. При попаданні, ціль отримує Куб Рангу постійної Їдкої Шкоди до успішного Опору Силою.
+                </Card>
+            </div>
+            <div class="col-4 cs-border pt-2" style="height: 276px;">
+                <Card Action="true" OneTime="true" Caption="Електромагічні трасформатори">
+                    Ваш Автоматон телепортується на відстань, вдвічі більшу за його Швидкість. По-прибуттю він проводить Електричну Атаку по всім сусіднім створінням.
+                </Card>
+            </div>
+             <div class="col-4 cs-border pt-2" style="height: 276px;">
+                <Card Action="true" OneTime="true" Caption="Пересувальні Підсилювачі">
+                    Ваш Автоматон стрибає на свою Швидкість та по-приземленню проводить Звукову Атаку проти всіх сусідніх створінь.
+                </Card>
+            </div>
+        </div>
     </div>
-    </div>*@
 </div>
